@@ -45,3 +45,9 @@ can activate this environment with:
 ```bash
 conda activate tutorial
 ```
+
+Finally, you can launch Jupyter Lab to start going through the tutorial:
+
+```bash
+jupyter lab
+```
