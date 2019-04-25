@@ -20,7 +20,17 @@ instructions to install it on your system.  (On Cheyenne, you need to
 install the _Linux_ version of the bash install script and install
 that way.)
 
-After Miniconda is installed, you will probably want to download this
+After Miniconda is installed, you will want to set up Conda so that it
+installs packages from a trusted _channel_.  Within the Python community,
+the `conda-forge` channel is considered the most trusted source of packages
+that will work together.  So, we enable the use of the `conda-forge` channel
+for all packages with the following:
+
+```bash
+conda config --add channels conda-forge
+```
+
+will probably want to download this
 tutorial to a space on your laptop, like so:
 
 ```bash
