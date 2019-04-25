@@ -6,3 +6,42 @@ or...
 
 > "How to use Python to read and plot CESM output, satellite output, 
 > aircraft observations (netcdf files)."
+
+## Preparation
+
+We will use _Miniconda_ to install and manage our Python environment.  
+For this tutorial, we will do everything on our laptops, but the _same
+steps_ work on Cheyenne, too.  (Or, when there are differences, we will
+indicate them so you can reproduce this on Cheyenne.)
+
+First, download the Miniconda installer for your system
+[here](https://docs.conda.io/en/latest/miniconda.html), and follow the
+instructions to install it on your system.  (On Cheyenne, you need to
+install the _Linux_ version of the bash install script and install
+that way.)
+
+After Miniconda is installed, you will probably want to download this
+tutorial to a space on your laptop, like so:
+
+```bash
+git clone https://github.com/NCAR/ACOM-Python-Tutorial.git
+```
+
+and then change directory into the tutorial repository:
+
+```bash
+cd ACOM-Python-Tutorial
+```
+
+Now, you want to create the base Conda _environment_ for this tutorial.
+
+```bash
+conda create --name tutorial python=3.7 jupyterlab
+```
+
+In this case, we just created an environment called `tutorial`, and we
+can activate this environment with:
+
+```bash
+conda activate tutorial
+```
