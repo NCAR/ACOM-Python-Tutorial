@@ -56,6 +56,14 @@ can activate this environment with:
 conda activate tutorial
 ```
 
+Next, you will probably want to download the tutorial data to your laptop:
+
+```bash
+cd data
+./get_cesm_data # Follow prompt for password/token response
+cd ..
+```
+
 Finally, you can launch Jupyter Lab to start going through the tutorial:
 
 ```bash
