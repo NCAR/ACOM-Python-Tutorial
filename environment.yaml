@@ -1,0 +1,83 @@
+name: tutorial
+channels:
+- conda-forge
+- nesii/label/dev-esmf
+- defaults
+dependencies:
+- python=3.7
+- pip
+# core pydata
+- bottleneck
+- dask
+- dask-mpi
+- distributed
+- eofs
+- metpy
+- numba
+- numpy
+- pandas
+- scipy
+- statsmodels
+- xarray
+# serialization
+- h5netcdf
+- h5py
+- netcdf4
+- numcodecs
+- rasterio
+- zarr
+# visualization
+- basemap
+- bokeh
+- cartopy
+- cmocean
+- datashader
+- geoviews
+- holoviews
+- hvplot
+- matplotlib
+- panel
+- seaborn
+# Misc
+- cf_units
+- cftime
+- cytoolz
+- datashader
+- esmpy
+- graphviz
+- gsw # https://teos-10.github.io/GSW-Python/install.html
+- intake
+- intake-xarray
+- ipykernel
+- ipywidgets
+- lz4
+- memory_profiler
+- mpi4py
+- nc-time-axis
+- nodejs
+- nomkl
+- pandoc
+- pandocfilters
+- papermill
+- pint==0.8.1 # pin version: https://github.com/Unidata/MetPy/issues/998
+- psutil
+- pynio
+- pytest
+- python-blosc
+- python-graphviz
+- snakeviz
+- toolz
+- tornado
+- tqdm
+- xesmf
+- zict
+- pip:
+  - cfgrib
+  - click
+  - git+https://github.com/dask/dask-jobqueue.git
+  - git+https://github.com/NCAR/esmlab-regrid.git
+  - git+https://github.com/NCAR/esmlab.git
+  - git+https://github.com/NCAR/intake-esm.git
+  - ncar-jobqueue
+  - seawater
+  - watermark
