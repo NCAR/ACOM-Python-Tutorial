@@ -44,20 +44,37 @@ and then change directory into the tutorial repository:
 cd ACOM-Python-Tutorial
 ```
 
-Now, you want to create the base Conda _environment_ for this tutorial.
+First update the conda base environment.
 
 ```bash
-conda create --name tutorial python=3.7 jupyterlab
+conda env update -f environments/base.yaml
 ```
 
-In this case, we just created an environment called `tutorial`, and we
-can activate this environment with:
+Next create the Conda _environment_ for this tutorial (this can take ~ 5 min).
+
+```bash
+conda env update -f environments/environment.yaml
+```
+
+To use one of these environments, we need to activate it using the command conda activate ENV_NAME, and to deactivate an environment, we use conda deactivate.
+
+
+Once you've created the above environments, you will need to run the `post_build` script in order to build JupyterLab extensions.
+
+```bash 
+conda activate base
+./environments/post_build
+```
+
+**Note:** To manage environments, the `conda env`, `conda info`, and `conda list` commands are helpful tools. The `conda info` command can be used to list available environments (same as `conda env list`).
+
+Now, let's activate our `tutorial` environment with:
 
 ```bash
 conda activate tutorial
 ```
 
-Once the environment is activated, you will need to download additional assets such as coastlines, etc by executing the following script:
+Once the environment is activated, you will need to download additional plotting assets such as coastlines, etc by executing the following script:
 
 ```bash 
 python scripts/download_cartopy_assets.py --output ~/.local/share/cartopy cultural-extra cultural gshhs physical
