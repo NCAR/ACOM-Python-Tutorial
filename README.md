@@ -57,6 +57,12 @@ can activate this environment with:
 conda activate tutorial
 ```
 
+Once the environment is activated, you will need to download additional assets such as coastlines, etc by executing the following script:
+
+```bash 
+python scripts/download_cartopy_assets.py --output ~/.local/share/cartopy cultural-extra cultural gshhs physical
+```
+
 Now you are ready to run the tutorial from your laptop.  You can launch Jupyter 
 Lab to start going through the tutorial:
 
