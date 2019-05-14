@@ -71,10 +71,10 @@ dependencies:
 - tqdm
 - xesmf
 - zict
+- dask-jobqueue
 - pip:
   - cfgrib
   - click
-  - git+https://github.com/dask/dask-jobqueue.git
   - git+https://github.com/NCAR/esmlab-regrid.git
   - git+https://github.com/NCAR/esmlab.git
   - git+https://github.com/NCAR/intake-esm.git

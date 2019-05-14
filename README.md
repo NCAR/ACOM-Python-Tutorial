@@ -9,17 +9,55 @@ or...
 
 ## Preparation
 
+### Get Miniconda and install
+
 We will use _Miniconda_ to install and manage our Python environment. 
 
-For this tutorial, we will do everything on our laptops, but the _same
-steps_ work on Cheyenne, too.  (Or, when there are differences, we will
-indicate them so you can reproduce this on Cheyenne.)
+For this tutorial, we will do everything on Cheyenne, but the _same
+steps_ work on your laptop, too.  (Or, when there are differences, we will
+indicate them so you can reproduce this on your laptop.)
 
 First, download the Miniconda installer for your system
 [here](https://docs.conda.io/en/latest/miniconda.html), and follow the
-instructions to install it on your system.  (On Cheyenne, you need to
+instructions to install it on your system.  On Cheyenne, you need to
 install the _Linux_ version of the bash install script and install
-that way.)
+that way.
+
+
+```bash
+wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
+bash miniconda.sh    # Follow the prompts on the installer screens.
+```
+
+If you are unsure about any setting, accept the defaults. We recommend adding the miniconda path to your PATH variable manually. For a bash user, this would entail adding something like the following to your .bashrc file:
+
+```bash
+export PATH=/path/to/installation/miniconda3/bin:${PATH}
+```
+
+To make the changes take effect, logout and log back in.
+
+
+To verify that conda is available on your system, you can try
+
+```bash
+conda --version 
+```
+
+After install, update conda:
+
+```bash 
+ conda update -n base conda
+```
+
+And configure the shell, replacing {SHELL} in the command below with your shell (i.e., bash, tcsh,...):
+
+```bash
+conda init {SHELL}
+```
+
+
+### Create environments
 
 After Miniconda is installed, you will want to set up Conda so that it
 installs packages from a trusted _channel_.  Within the Python community,
@@ -32,7 +70,7 @@ conda config --add channels conda-forge
 ```
 
 will probably want to download this
-tutorial to a space on your laptop, like so:
+tutorial to a space on your laptop or workspace on Cheyenne, like so:
 
 ```bash
 git clone https://github.com/NCAR/ACOM-Python-Tutorial.git
@@ -80,7 +118,20 @@ Once the environment is activated, you will need to download additional plotting
 python scripts/download_cartopy_assets.py --output ~/.local/share/cartopy cultural-extra cultural gshhs physical
 ```
 
-Now you are ready to run the tutorial from your laptop.  You can launch Jupyter 
+
+## Running JupyterLab
+
+### Cheyenne
+
+ When you are ready to start your Jupyter Lab session,simply point your browser to:
+
+```
+https://jupyterhub.ucar.edu
+```
+
+### Running Locally
+
+To run the tutorial from your laptop.  You can launch Jupyter 
 Lab to start going through the tutorial:
 
 ```bash
@@ -89,14 +140,3 @@ jupyter lab
 
 and this will take you to a browser window/tab where your Jupyter Lab session 
 will run.
-
-### On Cheyenne...
-
-If you are doing this tutorial on Cheyenne, you can install Miniconda in your 
-home or work space on GLADE, and you can create your conda environment and
-activate it exactly the same way.  When you are ready to start your Jupyter Lab
-session, however, simply point your browser to:
-
-```
-https://jupyterhub.ucar.edu
-```
