@@ -123,11 +123,31 @@ python scripts/download_cartopy_assets.py --output ~/.local/share/cartopy cultur
 
 ### Cheyenne
 
- When you are ready to start your Jupyter Lab session,simply point your browser to:
+ When you are ready to start your Jupyter Lab session, simply point your browser to NCAR's JupyterHub deployment. This jupyter hub is accessible at:
 
 ```
 https://jupyterhub.ucar.edu
 ```
+
+You must have a Cheyenne account. The spawning screen will look like this (below): but with your project account specified.
+
+![](https://camo.githubusercontent.com/28a83e5f353bd05b27b9944d5e4688b6e23ab657/68747470733a2f2f692e696d6775722e636f6d2f674c7567756b7a2e706e67)
+
+
+- Specify your project account
+- You can also change the queue and other settings
+
+Once your session is active:
+
+Create a new notebook: File ➤ New ➤ Notebook
+
+![](https://camo.githubusercontent.com/43783ce690f2a185e779f4cc609acdfffe0230e4/68747470733a2f2f692e696d6775722e636f6d2f705870775558432e706e67)
+
+
+Select which kernel to use by selection `Python [conda env:tutorial]` from the drop-down menu:
+
+![](https://camo.githubusercontent.com/6fe05f54f480570b779d9cf9f8f78cd725afb105/68747470733a2f2f692e696d6775722e636f6d2f71384c4442436a2e706e67)
+
 
 ### Running Locally
 
