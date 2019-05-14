@@ -129,7 +129,7 @@ python scripts/download_cartopy_assets.py --output ~/.local/share/cartopy cultur
 https://jupyterhub.ucar.edu
 ```
 
-You must have a Cheyenne account. The spawning screen will look like this (below): but with your project account specified.
+You must have a Cheyenne account. The spawning screen will look like this (below): but with your project account specified.  (For this tutorial, we have a special reservation `R5703855`.  Use this during the tutorial.  It will remain available through May 18, 2019.)
 
 ![](https://camo.githubusercontent.com/28a83e5f353bd05b27b9944d5e4688b6e23ab657/68747470733a2f2f692e696d6775722e636f6d2f674c7567756b7a2e706e67)
 
