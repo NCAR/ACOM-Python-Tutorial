@@ -1,0 +1,17 @@
+name: base
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.7
+  - pip
+  - jupyterlab
+  - jupyter_dashboards
+  - ipywidgets
+  - nodejs
+  - nb_conda_kernels
+  - tornado
+  - widgetsnbextension
+  - pip:
+    - dask_labextension
+    - jupyter-server-proxy
