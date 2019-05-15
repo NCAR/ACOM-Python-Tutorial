@@ -1,4 +1,4 @@
-name: tutorial
+name: acom-tutorial
 channels:
 - conda-forge
 - nesii/label/dev-esmf
