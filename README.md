@@ -106,7 +106,7 @@ Once you've created the above environments, you will need to run the
 
 ```bash 
 conda activate base
-./environments/post_build.sh
+./scripts/post_build.sh
 ```
 
 **Note:** To manage environments, the `conda env`, `conda info`, and
