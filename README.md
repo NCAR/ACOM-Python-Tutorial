@@ -116,7 +116,7 @@ used to list available environments (same as `conda env list`).
 Now, let's activate our `tutorial` environment with:
 
 ```bash
-conda activate tutorial
+conda activate acom-tutorial
 ```
 
 Once the environment is activated, you will need to download additional
@@ -154,9 +154,19 @@ Once your session is active, create a new notebook (File ➤ New ➤ Notebook).
 
 ![](https://camo.githubusercontent.com/43783ce690f2a185e779f4cc609acdfffe0230e4/68747470733a2f2f692e696d6775722e636f6d2f705870775558432e706e67)
 
-Select which kernel to use by selection `Python [conda env:tutorial]` from the drop-down menu:
+Select which kernel to use by selection `Python [conda env:acom-tutorial]` from the drop-down menu:
 
 ![](https://camo.githubusercontent.com/6fe05f54f480570b779d9cf9f8f78cd725afb105/68747470733a2f2f692e696d6775722e636f6d2f71384c4442436a2e706e67)
+
+**Note:** You may find this Conda environment useful after this tutorial, but you 
+may want to give it a name that is more informative than `acom-tutorial`.  There is
+no simple "rename" operation in Conda, but you can make a copy of the environment 
+(with a new name) and delete the original environment by do the following:
+
+```bash
+conda create --name {NEW_NAME} --clone acom-tutorial
+conda remove --name acom-tutorial --all
+```
 
 ### Running Locally
 
