@@ -7,7 +7,10 @@ or...
 > "How to use Python to read and plot CESM output, satellite output, 
 > aircraft observations (netcdf files)."
 
-## Preparation
+I'm not sure we'll get to everything in the time allotted, but we'll try to make 
+the most of our time.
+
+## Preparation & Setup
 
 ### Get Miniconda and install
 
@@ -23,20 +26,20 @@ instructions to install it on your system.  On Cheyenne, you need to
 install the _Linux_ version of the bash install script and install
 that way.
 
-
 ```bash
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh
 bash miniconda.sh    # Follow the prompts on the installer screens.
 ```
 
-If you are unsure about any setting, accept the defaults. We recommend adding the miniconda path to your PATH variable manually. For a bash user, this would entail adding something like the following to your .bashrc file:
+If you are unsure about any setting, accept the defaults. We recommend adding the miniconda
+path to your PATH variable manually. For a bash user, this would entail adding something
+like the following to your `.bashrc` file:
 
 ```bash
 export PATH=/path/to/installation/miniconda3/bin:${PATH}
 ```
 
 To make the changes take effect, logout and log back in.
-
 
 To verify that conda is available on your system, you can try
 
@@ -50,12 +53,12 @@ After install, update conda:
  conda update -n base conda
 ```
 
-And configure the shell, replacing {SHELL} in the command below with your shell (i.e., bash, tcsh,...):
+And configure the shell, replacing `{SHELL}` in the command below with your shell
+(e.g., bash, tcsh, ...):
 
 ```bash
 conda init {SHELL}
 ```
-
 
 ### Create environments
 
@@ -69,8 +72,8 @@ for all packages with the following:
 conda config --add channels conda-forge
 ```
 
-will probably want to download this
-tutorial to a space on your laptop or workspace on Cheyenne, like so:
+You will probably want to download this tutorial to a space on your laptop or
+workspace (e.g., `$HOME`) on Cheyenne, like so:
 
 ```bash
 git clone https://github.com/NCAR/ACOM-Python-Tutorial.git
@@ -91,20 +94,24 @@ conda env update -f environments/base.yaml
 Next create the Conda _environment_ for this tutorial (this can take ~ 5 min).
 
 ```bash
-conda env update -f environments/environment.yaml
+conda env update -f environments/tutorial.yaml
 ```
 
-To use one of these environments, we need to activate it using the command conda activate ENV_NAME, and to deactivate an environment, we use conda deactivate.
+To use one of these environments, we need to activate it using the command
+`conda activate {ENV_NAME}`, and to deactivate an environment, we use 
+`conda deactivate`.
 
-
-Once you've created the above environments, you will need to run the `post_build` script in order to build JupyterLab extensions.
+Once you've created the above environments, you will need to run the
+`post_build` script in order to build some nice JupyterLab extensions.
 
 ```bash 
 conda activate base
-./environments/post_build
+./environments/post_build.sh
 ```
 
-**Note:** To manage environments, the `conda env`, `conda info`, and `conda list` commands are helpful tools. The `conda info` command can be used to list available environments (same as `conda env list`).
+**Note:** To manage environments, the `conda env`, `conda info`, and
+`conda list` commands are helpful tools. The `conda info` command can be
+used to list available environments (same as `conda env list`).
 
 Now, let's activate our `tutorial` environment with:
 
@@ -112,47 +119,49 @@ Now, let's activate our `tutorial` environment with:
 conda activate tutorial
 ```
 
-Once the environment is activated, you will need to download additional plotting assets such as coastlines, etc by executing the following script:
+Once the environment is activated, you will need to download additional
+plotting assets (for `cartopy`) such as coastlines, etc., by executing the
+following script:
 
 ```bash 
 python scripts/download_cartopy_assets.py --output ~/.local/share/cartopy cultural-extra cultural gshhs physical
 ```
 
-
 ## Running JupyterLab
 
 ### Cheyenne
 
- When you are ready to start your Jupyter Lab session, simply point your browser to NCAR's JupyterHub deployment. This jupyter hub is accessible at:
+ When you are ready to start your Jupyter Lab session, simply point your
+ browser to NCAR's JupyterHub deployment. This JupyterHub is accessible at:
 
 ```
 https://jupyterhub.ucar.edu
 ```
 
-You must have a Cheyenne account. The spawning screen will look like this (below): but with your project account specified.  (For this tutorial, we have a special reservation `R5703855`.  Use this during the tutorial.  It will remain available through May 18, 2019.)
+You must have a Cheyenne account. The spawning screen will look like this
+(below), but with your project account specified.  You will need to use a project
+that you have permission using for this tutorial.  (For this tutorial, we have
+a reservation, `R5703855`, that should be specified for the queue.  This reservation
+will be available through May 18, 2019.)
 
 ![](https://camo.githubusercontent.com/28a83e5f353bd05b27b9944d5e4688b6e23ab657/68747470733a2f2f692e696d6775722e636f6d2f674c7567756b7a2e706e67)
 
-
 - Specify your project account
-- You can also change the queue and other settings
+- Specify your desired queue (`R5703855` for this tutorial)
 
-Once your session is active:
-
-Create a new notebook: File ➤ New ➤ Notebook
+It can take some time to launch your job, so give it some time to work.
+Once your session is active, create a new notebook (File ➤ New ➤ Notebook).
 
 ![](https://camo.githubusercontent.com/43783ce690f2a185e779f4cc609acdfffe0230e4/68747470733a2f2f692e696d6775722e636f6d2f705870775558432e706e67)
-
 
 Select which kernel to use by selection `Python [conda env:tutorial]` from the drop-down menu:
 
 ![](https://camo.githubusercontent.com/6fe05f54f480570b779d9cf9f8f78cd725afb105/68747470733a2f2f692e696d6775722e636f6d2f71384c4442436a2e706e67)
 
-
 ### Running Locally
 
 To run the tutorial from your laptop.  You can launch Jupyter 
-Lab to start going through the tutorial:
+Lab from your laptop's command line to start going through the tutorial:
 
 ```bash
 jupyter lab
