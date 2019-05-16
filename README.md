@@ -12,6 +12,16 @@ the most of our time.
 
 ## Preparation & Setup
 
+**Note:** These instructions are for `bash` shell users, only.  There appear to be
+problems when installing conda/miniconda with `csh` or `tcsh`.  (I'm not even sure
+it works at all with `csh`.)  There is a fix for this coming, but the easiest way
+to set up conda on Cheyenne, if you are a `tcsh` shell user, then just do everythin
+below inside a `bash` instance.  In other words, just start by typing:
+
+```bash
+bash
+```
+
 ### Get Miniconda and install
 
 We will use _Miniconda_ to install and manage our Python environment. 
@@ -39,7 +49,8 @@ like the following to your `.bashrc` file:
 export PATH=/path/to/installation/miniconda3/bin:${PATH}
 ```
 
-To make the changes take effect, logout and log back in.
+To make the changes take effect, logout and log back in.  (You will need
+to initialize another `bash` instance, if you are a `tcsh` user.)
 
 To verify that conda is available on your system, you can try
 
@@ -59,6 +70,10 @@ And configure the shell, replacing `{SHELL}` in the command below with your shel
 ```bash
 conda init {SHELL}
 ```
+
+**Note:** This last step will probably not work for you if you use `csh` or `tcsh`
+as your default shell on Cheyenne (or your laptop).  That does not mean you cannot
+use conda, though.  And there is a fix coming for `tcsh` users, apparently.
 
 ### Create environments
 
@@ -101,31 +116,36 @@ To use one of these environments, we need to activate it using the command
 `conda activate {ENV_NAME}`, and to deactivate an environment, we use 
 `conda deactivate`.
 
-Once you've created the above environments, you will need to run the
-`post_build` script in order to build some nice JupyterLab extensions.
+Once you've created the above environments, activate the `base` environment 
+and run the `install_extensions.sh` script in order to build some nice
+JupyterLab extensions.
 
 ```bash 
 conda activate base
-./scripts/post_build.sh
+./scripts/install_extensions.sh
 ```
 
 **Note:** To manage environments, the `conda env`, `conda info`, and
-`conda list` commands are helpful tools. The `conda info` command can be
-used to list available environments (same as `conda env list`).
+`conda list` commands are helpful tools. The `conda info --envs` command
+can be used to list available environments (same as `conda env list`).
 
-Now, let's activate our `tutorial` environment with:
+Now, let's activate our `tutorial` environment and install the Jupyter
+extensions in that environment, too:
 
 ```bash
 conda activate acom-tutorial
+./scripts/install_extensions.sh
 ```
 
-Once the environment is activated, you will need to download additional
-plotting assets (for `cartopy`) such as coastlines, etc., by executing the
-following script:
+Finally, you will need to download additional plotting assets (for `cartopy`)
+such as coastlines, etc., by executing the following script:
 
-```bash 
+```bash
 python scripts/download_cartopy_assets.py --output ~/.local/share/cartopy cultural-extra cultural gshhs physical
 ```
+
+This last step is only necessary for certain special aspects of `cartopy`
+to work, namely the plotting of coastlines at different resolutions, etc.
 
 ## Running JupyterLab
 
@@ -140,17 +160,19 @@ https://jupyterhub.ucar.edu
 
 You must have a Cheyenne account. The spawning screen will look like this
 (below), but with your project account specified.  You will need to use a project
-that you have permission using for this tutorial.  (For this tutorial, we have
-a reservation, `R5703855`, that should be specified for the queue.  This reservation
-will be available through May 18, 2019.)
+that you have permission using for this tutorial.  (The reservations for this
+tutorial are `R5856730` and `R5856925`.  They will only be active for a short while after
+the tutorial has ended, so you may have to use the `regular` queue or the `shared`
+queue (if it is stable).)
 
 ![](https://camo.githubusercontent.com/28a83e5f353bd05b27b9944d5e4688b6e23ab657/68747470733a2f2f692e696d6775722e636f6d2f674c7567756b7a2e706e67)
 
 - Specify your project account
-- Specify your desired queue (`R5703855` for this tutorial)
+- Specify your desired queue or reservation
 
-It can take some time to launch your job, so give it some time to work.
-Once your session is active, create a new notebook (File ➤ New ➤ Notebook).
+It can take some time to launch your job (you are waiting in the queue, after all!),
+so give it some time to work.  Once your session is active, create a new notebook
+(File ➤ New ➤ Notebook).
 
 ![](https://camo.githubusercontent.com/43783ce690f2a185e779f4cc609acdfffe0230e4/68747470733a2f2f692e696d6775722e636f6d2f705870775558432e706e67)
 
@@ -158,9 +180,9 @@ Select which kernel to use by selection `Python [conda env:acom-tutorial]` from 
 
 ![](https://camo.githubusercontent.com/6fe05f54f480570b779d9cf9f8f78cd725afb105/68747470733a2f2f692e696d6775722e636f6d2f71384c4442436a2e706e67)
 
-**Note:** You may find this Conda environment useful after this tutorial, but you 
-may want to give it a name that is more informative than `acom-tutorial`.  There is
-no simple "rename" operation in Conda, but you can make a copy of the environment 
+**Note:** You may find the Conda environment we created above useful after this tutorial, but you 
+may want to give it a name that is more informative than `acom-tutorial`, such as `mypython` or
+something.  There is no simple "rename" operation in Conda, but you can make a copy of the environment 
 (with a new name) and delete the original environment by do the following:
 
 ```bash
