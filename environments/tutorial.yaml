@@ -1,12 +1,11 @@
 name: acom-tutorial
 channels:
 - conda-forge
-- nesii/label/dev-esmf
-- defaults
+- nodefaults
 dependencies:
-- python=3.7
+- python=3.8
 - pip
-- jupyterlab
+- jupyterlab>=3
 # core pydata
 - bottleneck
 - dask
@@ -19,7 +18,7 @@ dependencies:
 - pandas
 - scipy
 - statsmodels
-- xarray
+- xarray>=0.17
 # serialization
 - h5netcdf
 - h5py
@@ -40,7 +39,7 @@ dependencies:
 - panel
 - seaborn
 # Misc
-- cf_units
+- cf-units
 - cftime
 - cytoolz
 - datashader
@@ -56,14 +55,9 @@ dependencies:
 - mpi4py
 - nc-time-axis
 - nodejs
-- nomkl
-- pandoc
-- pandocfilters
 - papermill
-- pint==0.8.1 # pin version: https://github.com/Unidata/MetPy/issues/998
+- pint
 - psutil
-- pynio
-- pytest
 - python-blosc
 - python-graphviz
 - snakeviz
@@ -73,12 +67,8 @@ dependencies:
 - xesmf
 - zict
 - dask-jobqueue
-- pip:
-  - cfgrib
-  - click
-  - git+https://github.com/NCAR/esmlab-regrid.git
-  - git+https://github.com/NCAR/esmlab.git
-  - git+https://github.com/NCAR/intake-esm.git
-  - ncar-jobqueue
-  - seawater
-  - watermark
+- ncar-jobqueue
+- watermark 
+- cfgrib
+- intake-esm
+
