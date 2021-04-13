@@ -129,14 +129,6 @@ conda activate base
 `conda list` commands are helpful tools. The `conda info --envs` command
 can be used to list available environments (same as `conda env list`).
 
-Now, let's activate our `tutorial` environment and install the Jupyter
-extensions in that environment, too:
-
-```bash
-conda activate acom-tutorial
-./scripts/install_extensions.sh
-```
-
 Finally, you will need to download additional plotting assets (for `cartopy`)
 such as coastlines, etc., by executing the following script:
 
