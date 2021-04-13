@@ -142,27 +142,8 @@ to work, namely the plotting of coastlines at different resolutions, etc.
 https://jupyterhub.ucar.edu
 ```
 
-You must have a Cheyenne account. The spawning screen will look like this
-(below), but with your project account specified.  You will need to use a project
-that you have permission using for this tutorial.  (The reservations for this
-tutorial are `R5856730` and `R5856925`.  They will only be active for a short while after
-the tutorial has ended, so you may have to use the `regular` queue or the `shared`
-queue (if it is stable).)
+Online documentation for NCAR JupyterHub is available [here](https://www2.cisl.ucar.edu/resources/jupyterhub-ncar). 
 
-![](https://camo.githubusercontent.com/28a83e5f353bd05b27b9944d5e4688b6e23ab657/68747470733a2f2f692e696d6775722e636f6d2f674c7567756b7a2e706e67)
-
-- Specify your project account
-- Specify your desired queue or reservation
-
-It can take some time to launch your job (you are waiting in the queue, after all!),
-so give it some time to work.  Once your session is active, create a new notebook
-(File ➤ New ➤ Notebook).
-
-![](https://camo.githubusercontent.com/43783ce690f2a185e779f4cc609acdfffe0230e4/68747470733a2f2f692e696d6775722e636f6d2f705870775558432e706e67)
-
-Select which kernel to use by selection `Python [conda env:acom-tutorial]` from the drop-down menu:
-
-![](https://camo.githubusercontent.com/6fe05f54f480570b779d9cf9f8f78cd725afb105/68747470733a2f2f692e696d6775722e636f6d2f71384c4442436a2e706e67)
 
 **Note:** You may find the Conda environment we created above useful after this tutorial, but you 
 may want to give it a name that is more informative than `acom-tutorial`, such as `mypython` or
