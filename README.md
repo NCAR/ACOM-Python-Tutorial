@@ -116,14 +116,6 @@ To use one of these environments, we need to activate it using the command
 `conda activate {ENV_NAME}`, and to deactivate an environment, we use 
 `conda deactivate`.
 
-Once you've created the above environments, activate the `base` environment 
-and run the `install_extensions.sh` script in order to build some nice
-JupyterLab extensions.
-
-```bash 
-conda activate base
-./scripts/install_extensions.sh
-```
 
 **Note:** To manage environments, the `conda env`, `conda info`, and
 `conda list` commands are helpful tools. The `conda info --envs` command
